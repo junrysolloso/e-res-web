@@ -21,7 +21,7 @@
             </div>
           </div>
 
-          <div class="card shadow-sm" style="border-radius: 12px;">
+          <div class="card shadow-sm pb-2" style="border-radius: 12px;">
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-md-12">
