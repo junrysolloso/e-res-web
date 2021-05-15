@@ -86,9 +86,7 @@
                                     <select name="adviser" id="adviser" class="form-control select2">
                                       <option value="">Select Adviser</option>
                                       <?php foreach( $advisers as $value ): ?>
-                                        <?php if( strtolower( $value->nyo_special_skills ) != 'na' ): ?>
-                                          <option value="<?php echo $value->adviser_id; ?>"><?php echo ucwords( $value->adviser_name ); ?></option>
-                                        <?php endif; ?>
+                                        <option value="<?php echo $value->adviser_id; ?>"><?php echo ucwords( $value->adviser_name ); ?></option>
                                       <?php endforeach; ?>
                                     </select>
                                     <div class="input-group-append">

@@ -98,7 +98,9 @@
 
       <h4 class="mb-0 pt-2" id="breadcrumb"><?php echo ucwords( $f_segment ); ?> <span class="mdi mdi-menu-right"></span> <?php echo ucwords( $s_segment ); ?></h4>
       <div class="wrapper ml-0 ml-md-auto my-auto d-flex align-items-center pt-4 pt-md-0">
-        <a href="<?php echo base_url(); ?>studies/add" class="btn btn-success btn-sm ml-auto"><i class="mdi mdi-plus"></i> New Study</a>
+        <?php if ( $this->session->userdata( 'user_role' ) === 'administrator' ):?>
+          <a href="<?php echo base_url(); ?>studies/add" class="btn btn-success btn-sm ml-auto"><i class="mdi mdi-plus"></i> New Study</a>
+        <?php endif; ?>
       </div>
     </div>
     

@@ -1,23 +1,8 @@
 .bg-body {
-  background: linear-gradient(
-    to top left,
-    hsl(85.89, 82.61%, 54.9%) 0%,
-    hsl(86.03, 82.12%, 54.75%) 10.8%,
-    hsl(86.43, 80.77%, 54.32%) 19.9%,
-    hsl(87.07, 78.71%, 53.65%) 27.5%,
-    hsl(87.96, 76.09%, 52.77%) 33.9%,
-    hsl(89.1, 73.09%, 51.72%) 39.3%,
-    hsl(90.52, 69.85%, 50.52%) 44%,
-    hsl(92.23, 68.6%, 49.23%) 48.3%,
-    hsl(94.26, 68.82%, 47.87%) 52.5%,
-    hsl(96.61, 69.07%, 46.49%) 56.7%,
-    hsl(99.27, 69.33%, 45.14%) 61.4%,
-    hsl(102.21, 69.6%, 43.88%) 66.7%,
-    hsl(105.31, 69.87%, 42.76%) 73%,
-    hsl(108.29, 70.1%, 41.86%) 80.4%,
-    hsl(110.69, 70.26%, 41.24%) 89.4%,
-    hsl(111.84, 70.33%, 40.98%) 100%
-  ) !important;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../fn-uploads/login-bg.jpg');
 }
 
 .auth.theme-two .banner-section .slide-content.bg-1 {
