@@ -115,7 +115,7 @@ class Studies extends MY_Controller
   public function add() {
     if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
       if ( $this->input->post( 'study_title' ) ) {
-        $study_name = $this->fileuploader->zip( 'study_file', 'studies' );
+        $study_name = $this->fileuploader->file( 'study_file', 'studies' );
         $data = [
           'study_title'     => strtolower( $this->input->post( 'study_title' ) ),
           'category_id'     => $this->input->post( 'study_cat' ),

@@ -20,13 +20,13 @@ class Fileuploader
    * Photo upload
    */
   public function photo( $file, $folder ) {
-    $config['upload_path'] = 'fn-uploads/' . $folder;
+    $config['upload_path']   = 'fn-uploads/' . $folder;
     $config['allowed_types'] = 'jpg|png';
-    $config['encrypt_name'] = true;
-    $config['max_width'] = '2000';
-    $config['max_height'] = '2000';
-    $config['max_size'] = 5120;
-    $config['overwrite'] = false;
+    $config['encrypt_name']  = true;
+    $config['max_width']     = '2000';
+    $config['max_height']    = '2000';
+    $config['max_size']      = 5120;
+    $config['overwrite']     = false;
 
     if ( $file ) {
       $this->upload->initialize( $config );
@@ -37,12 +37,12 @@ class Fileuploader
         response( [ 'msg' => 'file-error' ] );
       } else {
 
-        $config['image_library'] = 'gd2';
-        $config['source_image'] = 'fn-uploads/'. $folder .'/'. $photo_name;
-        $config['create_thumb'] = false;
+        $config['image_library']  = 'gd2';
+        $config['source_image']   = 'fn-uploads/'. $folder .'/'. $photo_name;
+        $config['create_thumb']   = false;
         $config['maintain_ratio'] = true;
-        $config['width'] = 200;
-        $config['height'] = 200;
+        $config['width']          = 200;
+        $config['height']         = 200;
 
         $this->image_lib->initialize( $config );
         $this->image_lib->resize();
@@ -55,11 +55,11 @@ class Fileuploader
   /**
    * Zip upload
    */
-  public function zip( $file, $folder ) {
-    $config['upload_path'] = 'fn-uploads/' . $folder;
-    $config['allowed_types'] = 'zip';
-    $config['encrypt_name'] = true;
-    $config['overwrite'] = false;
+  public function file( $file, $folder ) {
+    $config['upload_path']   = 'fn-uploads/' . $folder;
+    $config['allowed_types'] = 'zip|pdf';
+    $config['encrypt_name']  = true;
+    $config['overwrite']     = false;
 
     if ( $file ) {
       $this->upload->initialize( $config );

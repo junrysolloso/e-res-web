@@ -32,6 +32,7 @@ class Content
         $this->template->set_master_template( 'layouts/layout_site' );
         $this->template->write( 'title', $config['title'] ); 
         $this->template->write_view( 'content', $config['view'], $config );
+        $this->template->write_view( 'content', 'templates/template_login_menu' );
       }
 
       if ( key_exists( 'css', $config ) ) {

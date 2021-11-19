@@ -5,32 +5,22 @@
     <!-- start topbar -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row shadow-sm">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center pt-2">
-        <a class="navbar-brand brand-logo text-success" style="color: #000; letter-spacing: 12px; font-weight: 600;">ERES WEB</a>
-        <a class="navbar-brand brand-logo-mini text-success" style="color: #000; letter-spacing: 0px; font-weight: 600;">ERS</a>
+        <a href="<?php echo base_url(); ?>" class="navbar-brand brand-logo text-success" style="color: #000; letter-spacing: 12px; font-weight: 600;">ERES WEB</a>
+        <a href="<?php echo base_url(); ?>" class="navbar-brand brand-logo-mini text-success" style="color: #000; letter-spacing: 0px; font-weight: 600;">ERS</a>
       </div>
+
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-menu"></span>
         </button>
         
-        <?php
-          $fn = ''; $cls = '';
-          $url = current_url();
-          $url = explode( '/', $url );
-          if ( isset( $url[4] ) ) {
-            $cls = $url[4];
-          }
-
-          if ( isset( $url[5] ) ) {
-            $fn = $url[5];
-          }
-        ?>
-
-        <div style="width: calc(100vw - 600px); margin-bottom: 0px; padding-right: 20px;">
-          <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Search by Year, Instructor or Department">
-          <div id="search-results" style="width: calc(100vw - 620px);"></div>  
-        </div>
-        <ul class="navbar-nav">
+        <form class="ml-auto search-form d-none d-md-block" action="#">
+          <div class="form-group m-0">
+            <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Search by Year, Instructor or Department" style="width: 50vw">
+            <div id="search-results" style="width: 50vw;"></div> 
+          </div>
+        </form>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown d-none d-xl-inline-flex">
             <a class="nav-link dropdown-toggle pl-4 d-flex align-items-center" id="UserDropdown" href="#"
               data-toggle="dropdown" aria-expanded="false">
@@ -47,11 +37,12 @@
             </div>
           </li>
         </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-          data-toggle="offcanvas">
-          <span class="icon-menu"></span>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
         </button>
       </div>
+
+      
     </nav>
     <!-- end topbar -->
 

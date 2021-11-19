@@ -52,12 +52,12 @@
             <div class="col-12">
               <div class="form-group">
                 <label for="study_file">Upload Study</label>
-                <small class="form-text text-muted">File must be .zip format.</small>
+                <small class="form-text text-muted">File must be PDF format.</small>
                 <div class="input-group col-xs-12">
-                  <input type="file" name="study_file" id="study_file" accept=".zip" class="file-upload-default" required />
+                  <input type="file" name="study_file" id="study_file" accept=".pdf" class="file-upload-default" required />
                   <input type="text" class="form-control file-upload-info" placeholder="Upload Image" disabled />
                   <span class="input-group-append">
-                    <button class="file-upload-browse btn btn-info" type="button">Upload Zip File</button>
+                    <button class="file-upload-browse btn btn-info" type="button">Upload PDF File</button>
                   </span>
                 </div>
                 <div class="input-helper"></div>

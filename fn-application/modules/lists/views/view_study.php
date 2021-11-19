@@ -26,7 +26,7 @@
                   <?php echo html_entity_decode( $study[0]->study_abstract ); ?>
                   <h4 class="border-top mt-4 pt-4">
                     <?php if ( $this->session->userdata( 'user_id' ) ): ?>
-                      <a href="<?php echo base_url() .'fn-uploads/lists/'. $study[0]->study_link; ?>" class="btn btn-info text-center text-sm-left d-sm-inline-block"><i class="mdi mdi-download"></i> Download Study</a>
+                      <a href="<?php echo base_url() .'fn-uploads/studies/'. $study[0]->study_link; ?>" class="btn btn-info text-center text-sm-left d-sm-inline-block" target="_blank"><i class="mdi mdi-download"></i> Download Study</a>
                     <?php else: ?>
                       <a href="<?php echo base_url(); ?>login" class="btn btn-info text-center text-sm-left d-sm-inline-block"><i class="mdi mdi-download"></i> Login to Download</a>
                     <?php endif; ?>
