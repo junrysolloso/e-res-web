@@ -20,7 +20,7 @@
     <?php echo $_styles; ?>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/css/admin.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/css/admin.css?v=<?php echo TEXT_VERSION; ?>" />
 
     <!-- Required JS -->
     <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/vendors/js/vendor.bundle.base.min.js"></script>
@@ -41,15 +41,15 @@
     <?php echo $content; ?>
 
     <!-- Custom JS -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_ajax.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_nav.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_popups.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_input.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_ajax.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_nav.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_popups.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_input.js?v=<?php echo TEXT_VERSION; ?>"></script>
 
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_datepicker.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_table.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_backup.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_action.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_datepicker.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_table.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_backup.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_action.js?v=<?php echo TEXT_VERSION; ?>"></script>
 
     <!-- Additional JS -->
     <?php echo $_scripts; ?>

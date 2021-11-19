@@ -14,7 +14,7 @@
         </h4>
         <?php echo html_entity_decode( $study[0]->study_abstract ); ?>
         <h4 class="border-top mt-4 pt-4">
-          <a href="<?php echo base_url() .'fn-uploads/studies/'. $study[0]->study_link; ?>" class="btn btn-info text-center text-sm-left d-sm-inline-block"><i class="mdi mdi-download"></i> Download Full Study</a>
+          <a href="<?php echo base_url() .'fn-uploads/studies/'. $study[0]->study_link; ?>" class="btn btn-info text-center text-sm-left d-sm-inline-block"><i class="mdi mdi-download"></i> Download Study</a>
           <a href="<?php echo base_url(); ?>studies" class="btn btn-primary text-center float-sm-right text-sm-right d-sm-inline-block"><i class="mdi mdi-arrow-left"></i> Back</a>
         </h4>
       </div>

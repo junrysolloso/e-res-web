@@ -87,7 +87,6 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 /**
  * Cutom constants
  */
-defined('TEXT_DOMAIN')         OR define('TEXT_DOMAIN', 'E-RES WEB'); // Text domain
-defined('TEXT_CREDIT')         OR define('TEXT_CREDIT', 'DJEMFCST'); // Credit to
-defined('TEXT_VERSION')        OR define('TEXT_VERSION', 'v1.0.0'); // Version number
-defined('TEXT_NOTHING')        OR define('TEXT_NOTHING', 'thestudy/nothing'); // Version number
+defined('TEXT_DOMAIN')  OR define('TEXT_DOMAIN', 'ERES Web'); // Text domain
+defined('TEXT_CREDIT')  OR define('TEXT_CREDIT', 'DJEMFCST'); // Credit to
+defined('TEXT_VERSION') OR define('TEXT_VERSION', '1.0.31'); // Version number

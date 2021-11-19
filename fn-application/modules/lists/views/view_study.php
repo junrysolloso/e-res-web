@@ -5,8 +5,8 @@
         <div class="content-wrapper">
           <div class="text-center d-flex flex-column align-items-center mb-5">
             <img class="lazy rounded-circle" width="100" height="100" src="<?php echo base_url(); ?>fn-uploads/placeholder.jpg" data-src="<?php echo base_url(); ?>fn-uploads/djemfcst-logo.png" alt="Don Jose Memorial Fundation College of Science and Technology" >
-            <h1><strong>E-RES WEB</strong></h1>
-            <p>E-RES WEB based platform for electronic research archives of DJEMFCST</p>
+            <h1><strong>ERES WEB</strong></h1>
+            <p>ERES Web Based Platform For Electronic Research Archives Of DJEMFCST</p>
           </div>
 
           <div class="row">
@@ -30,7 +30,7 @@
                     <?php else: ?>
                       <a href="<?php echo base_url(); ?>login" class="btn btn-info text-center text-sm-left d-sm-inline-block"><i class="mdi mdi-download"></i> Login to Download</a>
                     <?php endif; ?>
-                    <a href="<?php echo base_url(); ?>" class="btn btn-primary text-center float-sm-right text-sm-right d-sm-inline-block"><i class="mdi mdi-arrow-left"></i> Back</a>
+                    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="btn btn-primary text-center float-sm-right text-sm-right d-sm-inline-block"><i class="mdi mdi-arrow-left"></i> Back</a>
                   </h4>
                 </div>
               </div>

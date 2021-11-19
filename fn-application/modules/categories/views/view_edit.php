@@ -9,15 +9,8 @@
               <div class="form-group">
                 <label for="cat_name">Department Name</label>
                 <small class="form-text text-muted">Please enter department name</small>
-                <div class="input-group">
-                  <input type="hidden" name="category_id" value="<?php echo $category[0]->category_id; ?>">
-                  <input type="text" name="cat_name" value="<?php echo ucfirst( $category[0]->category_name ); ?>" class="form-control" id="cat_name" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="hidden" name="category_id" value="<?php echo $category[0]->category_id; ?>">
+                <input type="text" name="cat_name" value="<?php echo ucfirst( $category[0]->category_name ); ?>" class="form-control" id="cat_name" required />
                 <div class="input-helper"></div>
               </div>
             </div>

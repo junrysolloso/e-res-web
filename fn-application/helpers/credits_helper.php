@@ -10,7 +10,7 @@ if( ! function_exists( 'credits' ) ) {
         echo '© '. date( 'Y' ) .' '. TEXT_DOMAIN;
         break;
       case 'cr':
-        echo 'Powered by ' . TEXT_CREDIT . ' ' . TEXT_VERSION;
+        echo 'Powered by ' . TEXT_CREDIT;
         break;
       default:
         return false;

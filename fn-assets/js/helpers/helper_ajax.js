@@ -12,7 +12,7 @@ var validateOptions = {
   errorElement: 'small',
   errorClass: 'text-danger',
   errorPlacement: function(error, element) {
-    error.appendTo(element.parent('.input-group').next('.input-helper'));
+    error.appendTo(element.next('.input-helper'));
   },
   submitHandler: function(form){
     $(form).ajaxSubmit(ajaxOptions);

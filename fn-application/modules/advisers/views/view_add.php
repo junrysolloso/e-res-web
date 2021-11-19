@@ -9,14 +9,7 @@
               <div class="form-group">
                 <label for="adviser_name">Adviser Full Name</label>
                 <small class="form-text text-muted">Please enter adviser full name</small>
-                <div class="input-group">
-                  <input type="text" name="adviser_name" class="form-control" id="adviser_name" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="text" name="adviser_name" class="form-control" id="adviser_name" required />
                 <div class="input-helper"></div>
               </div>
             </div>

@@ -2,19 +2,19 @@
   <div class="container-fluid page-body-wrapper full-page-wrapper">
     <div class="content-wrapper auth p-0 theme-two">
       <div class="row">
-        <div class="col-12 col-md-12 h-100 bg-body">
+        <div class="col-12 col-md-12 h-100 bg-login">
           <div class="auto-form-wrapper d-flex align-items-center justify-content-center flex-column">
-            <div class="card shadow">
-              <div class="card-body">
+            <div class="card shadow" style="border-radius: 20px;">
+              <div class="card-body text-center">
 
                 <form action="" method="post">
-                  <h3 class="mr-auto">Hello! let's get started.</h3>
-                  <p class="mb-5 mr-auto">Enter your details below.</p>
+                  <h3 class="mr-auto mt-2">Let's get started</h3>
+                  <p class="mb-5 mr-auto">Please enter your details below to login</p>
 
                   <?php if ( validation_errors() ): ?>
                   <div class="alert alert-fill-danger" role="alert">
                     <i class="mdi mdi-alert-circle-outline"></i>
-                    <strong>Warning!</strong> All fields is required.
+                    All fields is required.
                   </div>
                   <?php endif; ?>
 
@@ -26,35 +26,17 @@
                   <?php endif; ?>
 
                   <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="mdi mdi-account-outline"></i>
-                        </span>
-                      </div>
-                      <input type="text" name="user_name" class="form-control" placeholder="Username">
-                    </div>
+                    <input type="text" name="user_name" class="form-control" placeholder="Username">
                   </div>
                   <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="mdi mdi-lock-outline"></i>
-                        </span>
-                      </div>
-                      <input type="password" name="user_pass" class="form-control" placeholder="Password">
-                    </div>
+                    <input type="password" name="user_pass" class="form-control" placeholder="Password">
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-block">LOGIN</button>
+                    <button type="submit" class="btn btn-success btn-block">SIGN IN</button>
                   </div>
-                  <div class="wrapper mt-5 text-gray">
+                  <div class="wrapper mt-5 text-gray" style="text-align: center !important;">
                     <p class="footer-text"><?php credits( 'co' ); ?></p>
-                    <ul class="auth-footer text-gray">
-                      <li>
-                        <a href="javascript:void(0);"><?php credits( 'cr' ); ?></a>
-                      </li>
-                    </ul>
+                    <p><?php credits( 'cr' ); ?></p>
                   </div>
                 </form>
 

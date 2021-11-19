@@ -74,7 +74,7 @@ class Login extends MY_Controller
 						$attempt_count = intval( $this->model_authattempts->_attempt_check() ); 
 						if ( $this->model_authattempts->_attempt_insert( $this->input->post( 'user_name' ) ) ) {
 							$this->session->set_tempdata( [
-								'alert' => '<strong>Sorry!</strong> login failed. You have <strong>' . ( 4 - $attempt_count ) . '</strong> attempt(s) remaining.',
+								'alert' => 'You have ' . ( 4 - $attempt_count ) . ' attempt(s) remaining.',
 								'class' => 'danger',
 							], NULL, 5 );
 						}

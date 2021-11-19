@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/vendors/select2/css/select2.min.css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/vendors/jquery-toast-plugin/jquery.toast.min.css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/css/style-main.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/css/admin.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>fn-assets/css/admin.css?v=<?php echo TEXT_VERSION; ?>">
 
     <?php echo $_styles; ?>
   </head>
@@ -32,11 +32,11 @@
 
     <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/vendors/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/vendors/select2/js/select2.full.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_ajax.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_input.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_popups.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_table.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_action.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_ajax.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_input.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_popups.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_table.js?v=<?php echo TEXT_VERSION; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>fn-assets/js/helpers/helper_action.js?v=<?php echo TEXT_VERSION; ?>"></script>
 
     <?php echo $_scripts; ?>
   </body>

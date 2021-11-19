@@ -1,27 +1,29 @@
-.bg-body {
-  object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url('../../fn-uploads/login-bg.jpg');
-}
-
-.auth.theme-two .banner-section .slide-content.bg-1 {
-  background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);
-  background-size: cover
-}
-
-.auth.register-bg-2 {
-  background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);
-  background-size: cover
-}
-
+.bg-body,
+.auth.register-bg-2,
+.auth.theme-two .banner-section .slide-content.bg-1,
 .auth.theme-two .banner-section .slide-content.bg-2 {
-  background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);
+  background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1) !important;
   background-size: cover
 }
 
 .auth.multi-step-login .step-form {
   width: 100% !important;
+}
+
+.bg-login {
+  object-fit: cover;
+  background-size: cover;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  background-image: url('../../fn-uploads/Don-Jose-Building.jpg');
+}
+
+.bg-login .wrapper * {
+  text-align: center !important;
+}
+
+.footer-text {
+  text-align: center;
 }
 
 .auth.multi-step-login .step-form .step-progress li.active:before {
@@ -65,6 +67,23 @@
   object-fit: cover;
 }
 
+.form-control {
+  height: 40px;
+}
+
+.swal-footer {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.swal-modal,
+.swal-button,
+.form-control,
+.select2-dropdown,
+.select2-container--default .select2-selection--single {
+  border-radius: 6px;
+}
+
 .card-img-top {
   height: 300px;  
   object-fit: cover;
@@ -94,7 +113,8 @@ a.btn {
 }
 
 .btn,
-.alert {
+.alert,
+.card {
   border-radius: 6px;
 }
 
@@ -286,8 +306,46 @@ div.dataTables_wrapper div.dataTables_filter {
 .note-editor.card {
   box-shadow: none;
   border-radius: 6px;
+  border: 1px solid #CCC;
 }
 
 .note-editor.note-frame {
   border: 1px solid #CCC;
+}
+
+/* Search */
+#search-results {
+  max-height: 500px;
+  width: 100%;
+  display: none;
+  position: absolute;
+  padding: 20px 10px 5px 10px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #80bdff;
+  border-top: none;
+  background: #fff;
+  z-index: 2005;
+  overflow-y: auto;
+}
+
+#search-results * {
+  text-align: left;
+}
+
+#search-results ul {
+  list-style: none;
+}
+
+#search-results a:hover {
+  text-decoration: none;
+}
+
+#search-results p {
+  font-size: 1em;
+}
+
+#search-results .search-result-year {
+  color: #000;
+  font-size: 0.8em;
 }

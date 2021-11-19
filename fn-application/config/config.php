@@ -22,7 +22,7 @@ date_default_timezone_set( 'Asia/Manila' );
 | environments.
 |
 */
-$config['base_url'] = '//localhost/e-res-web/';
+$config['base_url'] = 'https://local.dev/eresweb/';
 
 /*
 |--------------------------------------------------------------------------

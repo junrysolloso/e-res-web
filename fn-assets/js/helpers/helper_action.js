@@ -14,7 +14,7 @@ $(document).ready(function () {
   $(":input").inputmask();
 
   //Initialize Select2 Elements
-  $('.select2').select2({width: 'calc(100% - 65px)'});
+  $('.select2').select2({width: '100%'});
 
   // Reset input icons
   resetInputIcon();

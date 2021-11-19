@@ -12,53 +12,25 @@
               <div class="form-group">
                 <label for="user_fname">Full Name</label>
                 <small class="form-text text-muted">User full name ex: Juan Tamad</small>
-                <div class="input-group">
-                  <input type="text" name="user_fname" class="form-control" id="user_fname" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="text" name="user_fname" class="form-control" id="user_fname" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_email">Email Address</label>
                 <small class="form-text text-muted">User valid email address ex: juan@gmail.com</small>
-                <div class="input-group">
-                  <input type="email" name="user_email" class="form-control" id="user_email" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="email" name="user_email" class="form-control" id="user_email" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_phone">Phone Number</label>
                 <small class="form-text text-muted">User mobile number must be 11 digits</small>
-                <div class="input-group">
-                  <input type="text" name="user_phone" class="form-control" id="user_phone" maxlength="11" minlength="11" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="text" name="user_phone" class="form-control" id="user_phone" maxlength="11" minlength="11" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_address">Address</label>
                 <small class="form-text text-muted">User permanent address</small>
-                <div class="input-group">
-                  <input type="text" name="user_address" class="form-control" id="user_address" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="text" name="user_address" class="form-control" id="user_address" required />
                 <div class="input-helper"></div>
               </div>
             </div>
@@ -66,53 +38,25 @@
               <div class="form-group">
                 <label for="user_bio">Biography</label>
                 <small class="form-text text-muted">User biography</small>
-                <div class="input-group">
-                  <input type="text" name="user_bio" class="form-control" id="user_bio" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="text" name="user_bio" class="form-control" id="user_bio" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_name">User Name</label>
                 <small class="form-text text-muted">User unique username, contain letters and numbers, and must not contain spaces, special characters, or emoji</small>
-                <div class="input-group">
-                  <input type="text" name="user_name" class="form-control" id="user_name" minlength="4" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="text" name="user_name" class="form-control" id="user_name" minlength="4" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_pass">Password</label>
                 <small class="form-text text-muted">User password must be 6-8 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji</small>
-                <div class="input-group">
-                  <input type="password" name="user_pass" minlength="6" maxlength="8" class="form-control" id="user_pass" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="password" name="user_pass" minlength="6" maxlength="8" class="form-control" id="user_pass" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_pcon">Confirm Password</label>
                 <small class="form-text text-muted">User password again to confirm</small>
-                <div class="input-group">
-                  <input type="password" name="user_pcon" minlength="6" maxlength="8" class="form-control" id="user_pcon" required />
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <input type="password" name="user_pcon" minlength="6" maxlength="8" class="form-control" id="user_pcon" required />
                 <div class="input-helper"></div>
               </div>
             </div>
@@ -120,18 +64,11 @@
               <div class="form-group">
                 <label for="user_level">User Level</label>
                 <small class="form-text text-muted">User level or privilige can access specific functions</small>
-                <div class="input-group">
-                  <select name="user_level" id="user_level" class="form-control select2" required>
-                    <option value="">Select Role</option>
-                    <option value="user">User</option>
-                    <option value="administrator">Administrator</option>
-                  </select>
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="mdi mdi-check-circle-outline mdi-18px"></i>
-                    </span>
-                  </div>
-                </div>
+                <select name="user_level" id="user_level" class="form-control select2" required>
+                  <option value="">Select Role</option>
+                  <option value="user">User</option>
+                  <option value="administrator">Administrator</option>
+                </select>
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">

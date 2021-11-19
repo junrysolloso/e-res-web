@@ -5,7 +5,7 @@
     <!-- start topbar -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row shadow-sm">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center pt-2">
-        <a class="navbar-brand brand-logo text-success" style="color: #000; letter-spacing: 12px; font-weight: 600;">E-RES WEB</a>
+        <a class="navbar-brand brand-logo text-success" style="color: #000; letter-spacing: 12px; font-weight: 600;">ERES WEB</a>
         <a class="navbar-brand brand-logo-mini text-success" style="color: #000; letter-spacing: 0px; font-weight: 600;">ERS</a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -26,38 +26,10 @@
           }
         ?>
 
-        <div class="pr-4">
-          <input type="hidden" name="current-segment" value="<?php echo  $cls; ?>">
-          <?php if( $cls == 'officials' && ! $fn ): ?>
-            <div class="form-group" style="width: calc(100vw - 600px); margin-bottom: 0px;">
-              <div class="input-group">
-                <select name="chapter_id" id="chapter_id" class="form-control select2" required>
-                  <option value="">Select Chapter</option>
-                  <?php foreach( $chapters as $row ): ?>
-                    <option value="<?php echo $row->chapter_id; ?>" c-name="<?php echo ucwords( $row->chapter_name ); ?>"><?php echo ucwords( $row->chapter_name ); ?></option>
-                  <?php endforeach; ?>
-                </select>
-                <div class="input-group-append">
-                  <span class="input-group-text text-danger">
-                    <i class="mdi mdi-magnify-plus mdi-18px mdi-close-circle-outline"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-          <?php else: ?>
-            <div class="form-group" style="width: calc(100vw - 600px); margin-bottom: 0px;">
-              <div class="input-group">
-                <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Type to search">
-                <div class="input-group-append">
-                  <span class="input-group-text" style="cursor: pointer; ">
-                    <i class="mdi mdi-magnify-plus mdi-18px mdi-close-circle-outline"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-          <?php endif; ?>
+        <div style="width: calc(100vw - 600px); margin-bottom: 0px; padding-right: 20px;">
+          <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Search by Year, Instructor or Department">
+          <div id="search-results" style="width: calc(100vw - 620px);"></div>  
         </div>
-
         <ul class="navbar-nav">
           <li class="nav-item dropdown d-none d-xl-inline-flex">
             <a class="nav-link dropdown-toggle pl-4 d-flex align-items-center" id="UserDropdown" href="#"

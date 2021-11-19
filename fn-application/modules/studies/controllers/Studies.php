@@ -7,15 +7,19 @@ class Studies extends MY_Controller
   var $css;
 
   function __construct() {
-    parent:: __construct(); 
+    parent:: __construct();
 
     $this->js = [ 
       'fn-assets/vendors/jquery-tags-input/jquery.tagsinput.min.js',
-      'fn-assets/vendors/summernote/dist/summernote-bs4.min.js'
+      'fn-assets/vendors/summernote/dist/summernote-bs4.min.js',
+      'fn-assets/vendors/daterangepicker/moment.min.js',
+      'fn-assets/vendors/daterangepicker/daterangepicker.min.js',
+      'fn-assets/js/helpers/helper_datepicker.js'
     ];
     $this->css = [ 
       'fn-assets/vendors/jquery-tags-input/jquery.tagsinput.min.css',
-      'fn-assets/vendors/summernote/dist/summernote-bs4.css'
+      'fn-assets/vendors/summernote/dist/summernote-bs4.css',
+      'fn-assets/vendors/daterangepicker/daterangepicker.css'
     ];
 
     $this->sess->unrestricted();
@@ -29,22 +33,46 @@ class Studies extends MY_Controller
 
     if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
       $data = [
-        'year' => $this->input->get( 'year' ),
-        'adviser' => $this->input->get( 'adviser' ),
+        'from'     => $this->input->get( 'from' ),
+        'to'       => $this->input->get( 'to' ),
+        'adviser'  => $this->input->get( 'adviser' ),
         'category' => $this->input->get( 'category' )
       ];
 
       $data = clean_array( $data );
-      if ( key_exists( 'year', $data ) ) {
-        $filter['study_year'] = $data['year'];
-      } else if ( key_exists( 'adviser', $data ) ) {
-        $filter['tbl_studies.adviser_id'] = $data['adviser'];
-      } else if ( key_exists( 'category', $data ) ) {
-        $filter['tbl_studies.category_id'] = $data['category'];
+      if ( key_exists( 'from', $data ) ) {
+        $from = $data['from'];
+      } else {
+        $from = 2001;
       }
-    }
 
-    $config['view'] = 'view_studies';
+      if ( key_exists( 'to', $data ) ) {
+        $to = $data['to'];
+      } else {
+        $to = date('Y');
+      }
+
+      if ( key_exists( 'category', $data ) )  {
+        $category = $data['category'];
+        $category = " `tbl_studies.category_id`='$category' AND ";
+      } else {
+        $category = null;
+      }
+
+      if ( key_exists( 'adviser', $data ) )  {
+        $adviser = $data['adviser'];
+        $adviser = " `tbl_studies.adviser_id`='$adviser' AND ";
+      } else {
+        $adviser = null;
+      }
+
+      $string = "{$adviser} {$category} `study_year` BETWEEN '$from' AND '$to'";
+      $filter["$string"] = NULL;
+    }
+    
+    $config['js']    = $this->js;
+    $config['css']   = $this->css;
+    $config['view']  = 'view_studies';
     $config['title'] = 'Studies';
 
     $fields = '`study_id`, `study_title`, `study_year`, `study_proponents`, `study_link`, `adviser_name`, `category_name`';
@@ -53,8 +81,8 @@ class Studies extends MY_Controller
       'tbl_categories' => '`tbl_categories`.`category_id`=`tbl_studies`.`category_id`'
     ];
 
-    $config['studies'] = $this->dbdelta->get_all( 'tbl_studies', [ 'study_year' => 'DESC' ], 0, $joins, $filter, 0, $fields );
-    $config['advisers'] = $this->dbdelta->get_all( 'tbl_advisers' );
+    $config['studies']    = $this->dbdelta->get_all( 'tbl_studies', [ 'study_year' => 'DESC' ], 0, $joins, $filter, 0, $fields );
+    $config['advisers']   = $this->dbdelta->get_all( 'tbl_advisers' );
     $config['categories'] = $this->dbdelta->get_all( 'tbl_categories' );
     $this->content->view( $config );
   }
