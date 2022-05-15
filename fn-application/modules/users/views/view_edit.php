@@ -75,13 +75,13 @@
                 <div class="form-group">
                   <label for="user_pass">Password</label>
                   <small class="form-text text-muted">User password must be 6-8 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
-                  <input type="password" name="user_pass" minlength="6" maxlength="8" class="form-control" id="user_pass" />
+                  <input type="password" name="user_pass" minlength="6" class="form-control" id="user_pass" />
                   <div class="input-helper"></div>
                 </div>
                 <div class="form-group">
                   <label for="user_pcon">Confirm Password</label>
                   <small class="form-text text-muted">User password again to confirm.</small>
-                  <input type="password" name="user_pcon" minlength="6" maxlength="8" class="form-control" id="user_pcon" />
+                  <input type="password" name="user_pcon" minlength="6" class="form-control" id="user_pcon" />
                   <div class="input-helper"></div>
                 </div>
                 <div class="form-group">

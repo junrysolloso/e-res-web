@@ -132,7 +132,7 @@ class Login extends MY_Controller
 				$backup = $this->dbutil->backup( $config );
 				if ( $this->load->helper( 'file' ) ) {
 					if ( write_file( FCPATH . 'fn-backup/'. $name_com, $backup ) ) {
-						redirect( base_url( 'login' ) );
+						redirect( base_url() );
 					}
 				}
 			} 

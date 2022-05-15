@@ -26,6 +26,7 @@ class Lists extends MY_Controller
     $filter = [];
 
     if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
+
       $data = [
         'from'     => $this->input->get( 'from' ),
         'to'       => $this->input->get( 'to' ),
@@ -60,7 +61,16 @@ class Lists extends MY_Controller
         $adviser = null;
       }
 
-      $string = "{$adviser} {$category} `study_year` BETWEEN '$from' AND '$to'";
+      if ( @$this->input->get('search-field') ) {
+        $s = strtolower( trim( $this->input->get('search-field') ) );
+        $string = "`study_title` LIKE '%{$s}%'";
+
+        if ( ! $this->dbdelta->check( 'tbl_keywords_list', [ 'key_value' => $s ] ) ) {
+          $this->dbdelta->insert( 'tbl_keywords_list', ['key_value' => $s] );
+        }
+      } else {
+        $string = "{$adviser} {$category} `study_year` BETWEEN '$from' AND '$to'";
+      }
       $filter["$string"] = NULL;
     }
 

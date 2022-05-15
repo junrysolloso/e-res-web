@@ -126,6 +126,20 @@ class Studies extends MY_Controller
           'study_abstract'  => htmlentities( $this->input->post( 'study_abs') )
         ];
 
+        $abstract = strip_tags( $this->input->post( 'study_abs') );
+        $abstract_len =  count( explode( ' ', $abstract ) );
+
+        if ( $abstract_len < 100 || $abstract_len > 500 ) {
+          response( [ 'msg' => 'abs_len', 'data' => 'Abstract length should be greater than 100 words and less than 500 words.' ] );
+        }
+
+        $keywords = explode( ',', $this->input->post( 'study_keywords') );
+        if ( is_array( $keywords ) && ! empty( $keywords ) ) {
+          foreach ( $keywords as $key => $keyword ) {
+            $this->dbdelta->insert( 'tbl_keywords_list', ['key_value' => $keyword] );
+          }
+        }
+
         $data = clean_array( $data );
         if ( ! $this->dbdelta->check( 'tbl_studies', [ 'study_title' => trim( $data['study_title'] ) ] ) ) {
           if ( $this->dbdelta->insert( 'tbl_studies', $data ) ) {
@@ -168,7 +182,7 @@ class Studies extends MY_Controller
         $o_study_file = $this->input->post( 'o_study_file' );
 
         if ( isset( $_FILES['study_file'] ) ) {
-          $study_file = $this->fileuploader->zip( 'study_file', 'studies' );
+          $study_file = $this->fileuploader->file( 'study_file', 'studies' );
           if ( isset( $study_file ) ) {
             unlink( 'fn-uploads/studies/'. $o_study_file );
           }
@@ -185,6 +199,13 @@ class Studies extends MY_Controller
           'study_proponents'=> strtolower( $this->input->post( 'study_pro' ) ), 
           'study_abstract'  => htmlentities( $this->input->post( 'study_abs') )
         ];
+
+        $abstract = strip_tags( $this->input->post( 'study_abs') );
+        $abstract_len =  count( explode( ' ', $abstract ) );
+
+        if ( $abstract_len < 100 || $abstract_len > 500 ) {
+          response( [ 'msg' => 'abs_len', 'data' => 'Abstract length should be greater than 100 words and less than 500 words.' ] );
+        }
 
         $data = clean_array( $data );
         if ( $this->dbdelta->update( 'tbl_studies', $data, [ 'study_id' => $id ] ) ) {

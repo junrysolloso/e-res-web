@@ -76,6 +76,11 @@
   padding-bottom: 30px;
 }
 
+.swal-text {
+  text-align: center !important;
+  padding: 0 20px !important;
+}
+
 .swal-modal,
 .swal-button,
 .form-control,
@@ -319,7 +324,6 @@ div.dataTables_wrapper div.dataTables_filter {
   width: 100%;
   display: none;
   position: absolute;
-  padding: 20px 10px 5px 10px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   border: 1px solid #80bdff;
@@ -348,6 +352,25 @@ div.dataTables_wrapper div.dataTables_filter {
 #search-results .search-result-year {
   color: #000;
   font-size: 0.8em;
+}
+
+.search___value {
+  cursor: default;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+#search-results li {
+  padding: 5px 10px 5px 10px;
+}
+
+#search-results li:hover {
+  background: #f5f5f5;
+}
+
+.search__btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 /* Login Menu */

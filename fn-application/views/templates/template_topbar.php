@@ -5,8 +5,8 @@
     <!-- start topbar -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row shadow-sm">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center pt-2">
-        <a href="<?php echo base_url(); ?>" class="navbar-brand brand-logo text-success" style="color: #000; letter-spacing: 12px; font-weight: 600;">ERES WEB</a>
-        <a href="<?php echo base_url(); ?>" class="navbar-brand brand-logo-mini text-success" style="color: #000; letter-spacing: 0px; font-weight: 600;">ERS</a>
+        <a href="<?php echo base_url(); ?>" class="navbar-brand brand-logo text-success" style="color: #000; letter-spacing: 12px; font-weight: 600;"><?php echo TEXT_DOMAIN; ?></a>
+        <a href="<?php echo base_url(); ?>" class="navbar-brand brand-logo-mini text-success" style="color: #000; letter-spacing: 0px; font-weight: 600;">ERW</a>
       </div>
 
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -16,10 +16,11 @@
         
         <form class="ml-auto search-form d-none d-md-block" action="#">
           <div class="form-group m-0">
-            <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Search by Year, Instructor or Department" style="width: 50vw">
+            <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Type keyword" style="width: 50vw">
             <div id="search-results" style="width: 50vw;"></div> 
           </div>
         </form>
+        
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown d-none d-xl-inline-flex">
             <a class="nav-link dropdown-toggle pl-4 d-flex align-items-center" id="UserDropdown" href="#"

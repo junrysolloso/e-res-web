@@ -21,6 +21,25 @@ class Advisers extends MY_Controller
   }
 
   /**
+	 * List page
+	 */
+  public function list() {
+    $config['view'] = 'view_list';
+    $config['title'] = 'List of study';
+    $config['categories'] = $this->dbdelta->get_all( 'tbl_categories' );
+
+    $filter = ["`tbl_studies.adviser_id`" => $this->input->get( 'id' )];
+    $fields = '`study_id`, `study_title`, `study_year`, `study_proponents`, `study_link`, `adviser_name`, `category_name`';
+    $joins = [
+      'tbl_advisers' => '`tbl_advisers`.`adviser_id`=`tbl_studies`.`adviser_id`',
+      'tbl_categories' => '`tbl_categories`.`category_id`=`tbl_studies`.`category_id`'
+    ];
+
+    $config['studies'] = $this->dbdelta->get_all( 'tbl_studies', [ 'study_year' => 'DESC' ], 0, $joins, $filter, 0, $fields );
+    $this->content->view( $config );
+  }
+
+  /**
    * Add
    */
   public function add() {
@@ -33,13 +52,37 @@ class Advisers extends MY_Controller
 
         $data = clean_array( $data );
         if ( ! $this->dbdelta->check( 'tbl_advisers', [ 'adviser_name' => trim( $name ) ] ) ) {
-          if ( $this->dbdelta->insert( 'tbl_advisers', $data ) ) {
-            if ( $this->model_log->add( task( 'adviser' )['add'] ) ) {
-              response( [ 'msg' => 'success', 'data' => 'added.' ] );
+
+          $login_name = strtolower( $this->input->post( 'user_name' ) );
+          if ( ! $this->dbdelta->check( 'user_login', [ 'login_name'=> trim( $login_name ) ] ) ) {
+            if ( $this->dbdelta->insert( 'tbl_advisers', $data ) ) {
+
+              $meta = [
+                'user_fname'  => $name,
+                'user_status' => 'active'
+              ];
+
+              if ( $this->dbdelta->insert( 'user_meta', $meta ) ) {
+                $login = [
+                  'login_name'  => $login_name,
+                  'login_pass'  => md5( $this->input->post( 'user_pass' ) ),
+                  'login_level' => 'user',
+                  'user_id'     => $this->dbdelta->get_max_id( 'tbl_user_meta', 'user_id' )
+                ];
+  
+                $login = clean_array( $login );
+                if ( $this->dbdelta->insert( 'user_login', $login ) ) {
+                  if ( $this->model_log->add( task( 'adviser' )['add'] ) ) {
+                    response( [ 'msg' => 'success', 'data' => 'added.' ] );
+                  }
+                }
+              }
             }
+          } else {
+            response( [ 'msg' => 'exist', 'data' => 'Username' ] );
           }
         } else {
-          response( [ 'msg' => 'exist', 'data' => 'Category' ] );
+          response( [ 'msg' => 'exist', 'data' => 'Department' ] );
         }
       }
     }

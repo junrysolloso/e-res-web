@@ -6,14 +6,24 @@
         <div class="content-wrapper">
 
           <div class="text-center d-flex flex-column align-items-center mb-5">
-            <img class="lazy rounded-circle" width="100" height="100" src="<?php echo base_url(); ?>fn-uploads/placeholder.jpg" data-src="<?php echo base_url(); ?>fn-uploads/djemfcst-logo.png" alt="Don Jose Memorial Fundation College of Science and Technology" >
-            <h1><strong>ERES WEB</strong></h1>
-            <p>ERES Web Based Platform For Electronic Research Archives Of DJEMFCST</p>
-            <div class="form-group col-lg-6 col-md-9 col-sm-12 m-0 p-0">
-              <input type="text" name="search-field" onmouseover="this.focus();" id="search-field" class="form-control" placeholder="Search by Year, Instructor or Department">
-              <div id="search-results"></div>
+            <img class="rounded-circle" width="100" height="100" src="<?php echo base_url(); ?>fn-uploads/djemfcst-logo.png" alt="Don Jose Memorial Fundation College of Science and Technology" >
+            <h1><strong><?php echo TEXT_DOMAIN; ?></strong></h1>
+            <p>Eres Web Based Research Archiving System Of DJEMFCST</p>
+            
+            <form action="" method="get">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-prepend">
+                    <input type="text" name="search-field" style="width: 40em;" autocomplete="off" id="search__field" class="form-control" placeholder="Type keyword">
+                    <div id="search-results"></div>
+                  </div>
+                  <div class="input-append">
+                    <button class="btn btn-primary search__btn"><i class="mdi mdi-magnify"></i> Search</button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </form>
 
           <div class="card mb-4 shadow-sm" style="border-radius: 6px;">
             <div class="card-body p-3">
@@ -21,24 +31,30 @@
                 <div class="row">
                   <div class="col-md-3 my-auto">
                     <div class="form-group m-0">
-                      <label for="category">Department</label>
+                      <label for="category">Year</label>
                       <small class="form-text text-muted">Please select year to filter</small>
                       <div class="row">
                         <div class="col-6">
                           <select name="from" id="year-from" class="form-control select2">
                             <option value="">From</option>
-                            <?php $base_year = intval( date( 'Y' ) ); for ( $i = 0; $i < 20; $i++ ): ?>
-                              <?php $year = ( $base_year - ( $i + 1 ) ); ?>
-                              <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                            <?php 
+                              $base_year = intval( date( 'Y' ) );
+                              $offset    = $base_year - 2009;
+                              for ( $i = 0; $i < $offset; $i++ ): 
+                            ?>
+                            <option value="<?php echo ( $base_year - $i ); ?>"><?php echo ( $base_year - $i ); ?></option>
                             <?php endfor; ?>
                           </select>
                         </div>
                         <div class="col-6">
                           <select name="to" id="year-to" class="form-control select2">
                             <option value="">To</option>
-                            <?php $base_year = intval( date( 'Y' ) ); for ( $i = 0; $i < 20; $i++ ): ?>
-                              <?php $year = ( $base_year - ( $i + 1 ) ); ?>
-                              <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                            <?php 
+                              $base_year = intval( date( 'Y' ) );
+                              $offset    = $base_year - 2009;
+                              for ( $i = 0; $i < $offset; $i++ ): 
+                            ?>
+                            <option value="<?php echo ( $base_year - $i ); ?>"><?php echo ( $base_year - $i ); ?></option>
                             <?php endfor; ?>
                           </select>
                         </div>
@@ -47,22 +63,22 @@
                   </div>
                   <div class="col-md-3 my-auto">
                     <div class="form-group m-0">
-                      <label for="category">Department</label>
-                      <small class="form-text text-muted">Please select department to filter</small>
+                      <label for="category">Program</label>
+                      <small class="form-text text-muted">Please select program to filter</small>
                       <select name="category" id="category" class="form-control select2">
-                        <option value="">Select Department</option>
+                        <option value="">Select program</option>
                         <?php foreach( $categories as $value ): ?>
-                          <option value="<?php echo $value->category_id; ?>"><?php echo ucwords( $value->category_name ); ?></option>
+                          <option value="<?php echo $value->category_id; ?>"><?php echo strtoupper( $value->category_name ); ?></option>
                         <?php endforeach; ?>
                       </select>
                     </div>
                   </div>
                   <div class="col-md-3 my-auto">
                     <div class="form-group m-0">
-                      <label for="adviser">Adviser</label>
-                      <small class="form-text text-muted">Please adviser to filter</small>
+                      <label for="adviser">Faculty</label>
+                      <small class="form-text text-muted">Please select faculty to filter</small>
                       <select name="adviser" id="adviser" class="form-control select2">
-                        <option value="">Select Adviser</option>
+                        <option value="">Select faculty</option>
                         <?php foreach( $advisers as $value ): ?>
                           <option value="<?php echo $value->adviser_id; ?>"><?php echo ucwords( $value->adviser_name ); ?></option>
                         <?php endforeach; ?>
@@ -85,11 +101,8 @@
                   <thead>
                     <tr>
                       <th><i class="mdi mdi-code-brackets icon-sm align-self-center text-primary mr-3"></i>Title</th>
-                      <th><i class="mdi mdi-calendar-check icon-sm align-self-center text-primary mr-3"></i>Year</th>
-                      <th><i class="mdi mdi-file-tree icon-sm align-self-center text-primary mr-3"></i>Department</th>
-                      <th><i class="mdi mdi-teach icon-sm align-self-center text-primary mr-3"></i>Adviser</th>
-                      <th><i class="mdi mdi-account-group-outline icon-sm align-self-center text-primary mr-3"></i>Proponents</th>
-                      <th></th>
+                      <th><i class="mdi mdi-file-tree icon-sm align-self-center text-primary mr-3"></i>Program</th>
+                      <th><i class="mdi mdi-teach icon-sm align-self-center text-primary mr-3"></i>Faculty</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -99,15 +112,11 @@
                           <div class="media">
                             <i class="mdi mdi-code-brackets icon-sm align-self-center text-primary mr-3"></i>
                             <div class="media-body my-auto">
-                              <p class="mb-0"><?php echo ucwords( $row->study_title ); ?></p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="media">
-                            <i class="mdi mdi-calendar-check icon-sm align-self-center text-primary mr-3"></i>
-                            <div class="media-body my-auto">
-                              <p class="mb-0"><?php echo $row->study_year; ?></p>
+                              <p class="mb-0">
+                                <a href="<?php echo base_url() .'lists/abstract?id='. $row->study_id; ?>" style="text-decoration: none;">
+                                  <?php echo ucwords( $row->study_title ); ?>
+                                </a> 
+                              </p>
                             </div>
                           </div>
                         </td>
@@ -124,30 +133,6 @@
                             <i class="mdi mdi-teach icon-sm align-self-center text-primary mr-3"></i>
                             <div class="media-body my-auto">
                               <p class="mb-0"><?php echo ucwords( $row->adviser_name ); ?></p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="media">
-                            <i class="mdi mdi-account-group-outline icon-sm align-self-center text-primary mr-3"></i>
-                            <div class="media-body my-auto">
-                              <p class="mb-0">
-                                <?php 
-                                  $proponents = explode(',', $row->study_proponents );
-                                  foreach ( $proponents as $val ) {
-                                    echo '<span class="badge badge-info mr-1">'. ucwords( $val ) .'</span>';
-                                  }
-                                ?></p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="media">
-                            <i class="mdi mdi-eye icon-sm align-self-center text-primary mr-3"></i>
-                            <div class="media-body my-auto">
-                              <p class="mb-0">
-                                <a href="<?php echo base_url() .'lists/abstract?id='. $row->study_id; ?>" style="text-decoration: none;">View</a>
-                              </p>
                             </div>
                           </div>
                         </td>

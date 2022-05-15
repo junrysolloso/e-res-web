@@ -27,10 +27,10 @@ if ( ! function_exists( 'task' ) ) {
         'view'    => 'Viewed user',
       ],
       'category' => [
-        'delete'  => 'Deleted category',
-        'update'  => 'Updated category',
-        'add'     => 'Added category',
-        'view'    => 'Viewed category',
+        'delete'  => 'Deleted department',
+        'update'  => 'Updated department',
+        'add'     => 'Added department',
+        'view'    => 'Viewed department',
       ],
       'login' => [
         'in'      => 'Log in',

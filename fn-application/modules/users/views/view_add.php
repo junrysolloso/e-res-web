@@ -24,7 +24,7 @@
               <div class="form-group">
                 <label for="user_phone">Phone Number</label>
                 <small class="form-text text-muted">User mobile number must be 11 digits</small>
-                <input type="text" name="user_phone" class="form-control" id="user_phone" maxlength="11" minlength="11" required />
+                <input type="number" name="user_phone" class="form-control" id="user_phone" maxlength="11" minlength="11" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
@@ -50,13 +50,13 @@
               <div class="form-group">
                 <label for="user_pass">Password</label>
                 <small class="form-text text-muted">User password must be 6-8 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji</small>
-                <input type="password" name="user_pass" minlength="6" maxlength="8" class="form-control" id="user_pass" required />
+                <input type="password" name="user_pass" minlength="6" class="form-control" id="user_pass" required />
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_pcon">Confirm Password</label>
                 <small class="form-text text-muted">User password again to confirm</small>
-                <input type="password" name="user_pcon" minlength="6" maxlength="8" class="form-control" id="user_pcon" required />
+                <input type="password" name="user_pcon" minlength="6" class="form-control" id="user_pcon" required />
                 <div class="input-helper"></div>
               </div>
             </div>
@@ -67,13 +67,12 @@
                 <select name="user_level" id="user_level" class="form-control select2" required>
                   <option value="">Select Role</option>
                   <option value="user">User</option>
-                  <option value="administrator">Administrator</option>
                 </select>
                 <div class="input-helper"></div>
               </div>
               <div class="form-group">
                 <label for="user_photo">Photo</label>
-                <small class="form-text text-muted">User photo must be .jpg or .png image format, less than 200KB file size and 800x800 maximum resulotion.</small>
+                <small class="form-text text-muted">User photo must be .jpg or .png image format, less than 5MB file size and 2000x2000 maximum resulotion.</small>
                 <div class="input-group col-xs-12">
                   <input type="file" name="photo" id="user_photo" accept=".jpg, .png" class="file-upload-default" />
                   <input type="text" class="form-control file-upload-info" placeholder="Upload Image" disabled />

@@ -34,7 +34,7 @@ class Fileuploader
       $photo_name = $this->upload->data( 'file_name' );
   
       if ( $this->upload->display_errors() ) {
-        response( [ 'msg' => 'file-error' ] );
+        response( [ 'msg' => 'file-error', 'data' => strip_tags( $this->upload->display_errors() ) ] );
       } else {
 
         $config['image_library']  = 'gd2';

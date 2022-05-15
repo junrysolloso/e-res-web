@@ -42,6 +42,7 @@ class Dbdelta
    */
   public function update( $table  = NULL, $data = [], $arg = [] ) {
     if ( is_array( $data ) && ! empty( $data ) ) {
+      
       if ( is_array( $arg ) && ! empty( $arg ) ) {
         foreach ( $arg as $key => $value ) {
           $this->db->where( $key, $value );

@@ -66,6 +66,11 @@ class Migration_Install_Setup extends CI_Migration
 				"`auth_user` char(10) DEFAULT NULL",
 			],
 
+			'keywords_list' => [
+				"`key_id` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT",
+				"`key_value` VARCHAR(255) DEFAULT NULL",
+			],
+
 			'sessions' => [
 				"`id` varchar(128) NOT NULL",
 				"`ip_address` varchar(45) NOT NULL",

@@ -360,13 +360,13 @@ $config['encryption_key'] = 'LrqR2oeyZJl3lSj8uq0nXmOYUI7NnFMz';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
-$config['sess_driver'] = 'database';
+$config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 7200;
-$config['sess_save_path'] = 'tbl_sessions';
+$config['sess_expiration'] = 3600;
+$config['sess_save_path'] = FCPATH . '/fn-application/sessions';
 $config['sess_match_ip'] = TRUE;
 $config['sess_time_to_update'] = 300;
-$config['sess_regenerate_destroy'] = FALSE;
+$config['sess_regenerate_destroy'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------

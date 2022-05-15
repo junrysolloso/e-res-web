@@ -32,15 +32,51 @@ $(document).ready(function() {
   }
 
   // Search table
+  // if ( $('input[name="search-field"]').length ) {
+  //   $('input[name="search-field"]').on('keyup', function () {
+  //     //$('.data-table').DataTable().search($(this).val()).draw();
+
+  //     if ( $(this).val() ) {
+  //       $.ajax({
+  //         type: 'GET',
+  //         dataType: 'html',
+  //         url: base_url + 'search',
+  //         data: {
+  //           s: $(this).val()
+  //         },
+  //         success: function(res) {
+  //           if (res) {
+  //             res = JSON.parse(res);
+  //             if (res.status == 200) {
+  //               if($('#search-results').length){
+  //                 $('#search-results').html(res.content);
+                  
+  //                 $('input[name="search-field"]').css('border-bottom-left-radius', '0px');
+  //                 $('input[name="search-field"]').css('border-bottom-right-radius', '0px');
+
+  //                 $('#search-results').slideDown('fast');
+  //               }
+  //             }
+  //           }
+  //         }
+  //       });
+  //     } else {
+  //       $('input[name="search-field"]').css('border-bottom-left-radius', '6px');
+  //       $('input[name="search-field"]').css('border-bottom-right-radius', '6px');
+  //       $('#search-results').slideUp('fast');
+  //     }
+  //   });
+  // }
+
   if ( $('input[name="search-field"]').length ) {
     $('input[name="search-field"]').on('keyup', function () {
-      //$('.data-table').DataTable().search($(this).val()).draw();
-
+      $('.data-table').DataTable().search($(this).val()).draw();
+  
       if ( $(this).val() ) {
         $.ajax({
           type: 'GET',
           dataType: 'html',
-          url: base_url + 'search',
+          url: base_url + 'keywords/value',
           data: {
             s: $(this).val()
           },
@@ -53,7 +89,6 @@ $(document).ready(function() {
                   
                   $('input[name="search-field"]').css('border-bottom-left-radius', '0px');
                   $('input[name="search-field"]').css('border-bottom-right-radius', '0px');
-
                   $('#search-results').slideDown('fast');
                 }
               }
@@ -66,5 +101,33 @@ $(document).ready(function() {
         $('#search-results').slideUp('fast');
       }
     });
+
+    $('body').on('click', '.search___value', function(){
+      $('input[name="search-field"]').val($(this).text());
+
+      $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: base_url + 'keywords/add',
+        data: {
+          word: $(this).text()
+        },
+        success: function(res) {
+          if (res) {
+            
+            if (res.status == 200) {
+              console.log(res);
+            }
+          }
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      });
+
+      $('input[name="search-field"]').css('border-bottom-left-radius', '6px');
+      $('#search-results').slideUp('fast');
+    });
   }
+
 });

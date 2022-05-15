@@ -7,9 +7,9 @@
             <i class="mdi mdi-book-search text-success icon-lg"></i>
           </div>
           <div class="float-right">
-            <p class="mb-0 text-right">Studies</p>
+            <p class="mb-0 text-right">Thesis Studies</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0"><?php echo $studies_count; ?><small>counts</small></h3>
+              <h3 class="font-weight-medium text-right mb-0"><?php $studies_count ? print( $studies_count ) : print( 0 ); ?><small>counts</small></h3>
             </div>
           </div>
         </div>
@@ -27,9 +27,9 @@
             <i class="menu-icon mdi mdi-teach text-primary icon-lg"></i>
           </div>
           <div class="float-right">
-            <p class="mb-0 text-right">Advisers</p>
+            <p class="mb-0 text-right">Faculties</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0"><?php echo $advisers_count;?><small>counts</small></h3>
+              <h3 class="font-weight-medium text-right mb-0"><?php $advisers_count ? print( $advisers_count ) : print( 0 );?><small>counts</small></h3>
             </div>
           </div>
         </div>
@@ -47,9 +47,9 @@
             <i class="mdi mdi-file-tree text-warning icon-lg"></i>
           </div>
           <div class="float-right">
-            <p class="mb-0 text-right">Departments</p>
+            <p class="mb-0 text-right">Programs</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0"><?php echo $categories_count; ?><small>counts</small></h3>
+              <h3 class="font-weight-medium text-right mb-0"><?php $categories_count ? print( $categories_count ) : print( 0 ); ?><small>counts</small></h3>
             </div>
           </div>
         </div>

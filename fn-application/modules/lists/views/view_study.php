@@ -5,8 +5,8 @@
         <div class="content-wrapper">
           <div class="text-center d-flex flex-column align-items-center mb-5">
             <img class="lazy rounded-circle" width="100" height="100" src="<?php echo base_url(); ?>fn-uploads/placeholder.jpg" data-src="<?php echo base_url(); ?>fn-uploads/djemfcst-logo.png" alt="Don Jose Memorial Fundation College of Science and Technology" >
-            <h1><strong>ERES WEB</strong></h1>
-            <p>ERES Web Based Platform For Electronic Research Archives Of DJEMFCST</p>
+            <h1><strong><?php echo TEXT_DOMAIN; ?></strong></h1>
+            <p>Web Based Platform For Electronic Research Archives Of DJEMFCST</p>
           </div>
 
           <div class="row">

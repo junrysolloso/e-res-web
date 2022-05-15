@@ -21,6 +21,25 @@ class Categories extends MY_Controller
   }
 
   /**
+	 * List page
+	 */
+  public function list() {
+    $config['view'] = 'view_list';
+    $config['title'] = 'List of study';
+    $config['categories'] = $this->dbdelta->get_all( 'tbl_categories' );
+
+    $filter = ["`tbl_studies.category_id`" => $this->input->get( 'id' )];
+    $fields = '`study_id`, `study_title`, `study_year`, `study_proponents`, `study_link`, `adviser_name`, `category_name`';
+    $joins = [
+      'tbl_advisers' => '`tbl_advisers`.`adviser_id`=`tbl_studies`.`adviser_id`',
+      'tbl_categories' => '`tbl_categories`.`category_id`=`tbl_studies`.`category_id`'
+    ];
+
+    $config['studies'] = $this->dbdelta->get_all( 'tbl_studies', [ 'study_year' => 'DESC' ], 0, $joins, $filter, 0, $fields );
+    $this->content->view( $config );
+  }
+
+  /**
    * Add
    */
   public function add() {

@@ -14,7 +14,7 @@ class Logs extends MY_Controller
    */
   public function index() {
     $joins =  [ 'tbl_user_login' => '`tbl_user_login`.`user_id`=`tbl_logs`.`user_id`' ];
-    $data = $this->dbdelta->get_all( 'tbl_logs', [ 'log_date' => 'DESC' ], 50, $joins );
+    $data = $this->dbdelta->get_all( 'tbl_logs', [ 'log_date' => 'DESC' ], 20, $joins );
 
     if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
       if ( $this->input->get( 'id' ) ) {
